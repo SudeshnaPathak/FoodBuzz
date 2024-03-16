@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success Page</title>
+</head>
+<body>
+      <h2>Current Address</h2>
+  <p>{{ user.userprofile.address }}</p>
+
+  <h2>Change Address</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" value="{{ form.address.value }}">
+    <button type="submit">Save</button>
+  </form>
+      <button type="button" class="btn btn-primary"> <a href="{% url 'conclude' %}" class="text-decoration-none text-dark">Pay Later</a> </button>
+      <button type="button" class="btn btn-primary"> <a href="{% url 'home'%}" class="text-decoration-none text-dark">Pay Now</a> </button>
+</body>
+</html>

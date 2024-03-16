@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-center w-50 mx-auto text-center">
+  <div class="w-100">
+    <form method="POST" class="w-75 mx-auto">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter Name</label>
+        <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter Email ID</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Enter Amount</label>
+        <input type="number" name="amount" class="form-control" id="exampleInputPassword1" >
+      </div>
+
+      <button type="submit" class="btn btn-success btn-block">Submit</button>
+    </form>
+
+    {% if payment %}
+    <form action="/success/" method="POST" class="w-75 mx-auto">
+      <script
+          src="https://checkout.razorpay.com/v1/checkout.js"
+          data-key="rzp_test_SdXIlYfGfq7kia"
+          data-amount="{{payment.amount}}"
+          data-currency="INR"
+          data-order_id="{{payment.id}}"
+          data-buttontext="Pay with Razorpay"
+          data-name="Food Buzz"
+          data-description="Food Order"
+          data-image="https://example.com/your_logo.jpg"
+          data-prefill.name="{{name}}"
+          data-prefill.email="{{email}}"
+          data-theme.color="#F37254"
+      ></script>
+      <input type="hidden" custom="Hidden Element" name="hidden"/>
+    </form>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
