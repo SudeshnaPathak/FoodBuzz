@@ -2144,6 +2144,10 @@ textarea.input-field {
 
 }
 
+/* BACKGROUND IMAGE
+
+.bg-image { background-image: url("{{ static 'images/form-pattern.png' }}"); } */
+
 
 
 .chatbot-container {

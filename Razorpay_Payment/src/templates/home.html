@@ -68,8 +68,7 @@
 
   <div class="chatbot-container">
     <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/99391bf5-b3bb-44f0-8507-5d6d7cdc71ff"></iframe>
-  </div>
-
+  </div> 
 
 
   <!--
@@ -172,7 +171,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link hover-underline">
+            <a href="user/login/" class="navbar-link hover-underline">
               <div class="separator"></div>
 
               <span class="span">Login</span>
@@ -180,7 +179,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link hover-underline">
+            <a href="user/logout/" class="navbar-link hover-underline">
               <div class="separator"></div>
 
               <span class="span">Logout</span>
@@ -217,10 +216,10 @@
 <!--        <span class="text text-2" aria-hidden="true">Pay Later </span>-->
 <!--      </a>-->
 
-      <a href="#" class="btn btn-secondary">
-        <span class="text text-1">Pay Now </span>
+      <a href="{% url 'address'%}" class="btn btn-secondary">
+        <span class="text text-1">Place Order </span>
 
-        <span class="text text-2" aria-hidden="true">Pay Now </span>
+        <span class="text text-2" aria-hidden="true">Place Order </span>
       </a>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
@@ -265,7 +264,7 @@
               Welcome to our restaurant website! We are thrilled to introduce you to a culinary experience like no other,<br> now with the convenience of our chatbot ordering feature, FOODBUZZ.
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
+            <a href="user/signup/" class="btn btn-primary slider-reveal">
               <span class="text text-1">Sign Up</span>
 
               <span class="text text-2" aria-hidden="true">Sign Up</span>
@@ -920,8 +919,8 @@
         - #TESTIMONIALS
       -->
 
-      <section class="section testi text-center has-bg-image" aria-label="testimonials">
-       <img src="{% static 'assets/images/MN.gif' %}" alt="MN Image">
+      <section class="section testi text-center has-bg-image" aria-label="testimonials" style="background-image: url('{% static 'images/MN.gif' %}')">
+
         <div class="container">
 
           <div class="quote">”</div>
@@ -981,8 +980,7 @@
 
             </form>
 
-            <div class="form-right text-center">
-              <img src="{% static 'assets/images/form-pattern.png' %}" alt="Form Pattern Image">
+            <div class="form-right text-center" style="background-image: url('{% static 'images/form-pattern.png' %}')">
 
               <h2 class="headline-1 text-center">Contact Us</h2>
 
