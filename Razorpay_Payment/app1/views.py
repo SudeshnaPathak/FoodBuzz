@@ -19,7 +19,6 @@ def SignupPage(request):
 
 # accounts/views.py
 
-
 def LoginPage(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
